@@ -1,0 +1,15 @@
+#########TELNET###########
+line vty 0 15
+password cisco
+login
+#########SSH##############
+configure terminal
+ip domain-name cisco.com
+crypto key generate RSA
+username admin secret ccna
+line vty 0 15
+transport input ssh
+login local
+exit
+ip ssh version 2
+exit

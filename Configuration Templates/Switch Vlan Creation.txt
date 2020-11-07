@@ -1,0 +1,21 @@
+#######Vlan Creation#######
+config t
+vlan 10
+name Student
+vlan 150
+name Voice
+end
+######Vlan Port Assignment#######
+config t
+int fa0/1
+switchport mode access
+switchport access vlan 10
+end
+#######Voice Vlan###########
+config t
+int f0/18
+switchport mode access
+switchport access vlan 10
+mls qos trust cos
+switchport access vlan 150
+end

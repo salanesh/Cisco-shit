@@ -1,0 +1,10 @@
+##############Switch Trunk Configuration############
+config t
+int fa0/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,30,40,99,150
+end
+#########Verifying############
+show vlan brief
+show interfaces fa0/1

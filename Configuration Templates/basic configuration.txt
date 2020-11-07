@@ -1,0 +1,10 @@
+en
+config t
+enable secret cisco
+hostname R1
+service password-encryption
+banner motd #Unauthorized access is prohibited#
+line con 0
+password cisco
+login
+exit

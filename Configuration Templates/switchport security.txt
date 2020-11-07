@@ -1,0 +1,22 @@
+###########Disable Ports#############
+int ra fa0/1-24
+shutdown
+end
+###########Static Secure Mac Address########
+int fa0/1
+switchport mode access
+switchport port-security
+switchport port-security maximum 2
+switchport port-security violation restrict
+switchport port-security mac-address 0025.8e36.4b01
+end
+###########Sticky Secure Mac Address########
+int fa0/1
+switchport mode access switchport port-security
+switchport port-security maximum 10
+switchport port-security violation protect
+switchport port-security mac-address sticky
+end
+########Verifying#########
+show port-security fa0/1
+show port-security address

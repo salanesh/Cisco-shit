@@ -1,0 +1,7 @@
+############Duplex and Speed Configuration for Switch##############
+config t
+int fa0/1
+duplex full
+mdix auto
+speed 100
+end
