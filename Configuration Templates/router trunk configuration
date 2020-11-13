@@ -1,0 +1,10 @@
+en
+config t
+int g0/0.10
+encapsulation dot1q 10
+exit
+int g0/0.99
+encapsulation dot1q 99 native
+exit
+int g0/0
+no shutdown
