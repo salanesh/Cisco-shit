@@ -1,0 +1,34 @@
+###########standard access control list config########
+en
+config t
+############numbered control list#############
+access-list 1 deny 192.168.1.0 0.0.0.255
+permit any
+deny any
+exit
+###########named control list################
+ip access-list standard NOLAN3
+deny 192.168.1.0 0.0.0.255
+deny host 192.168.2.3
+permit any
+deny any
+exit
+##########adding control list to interface###############
+int g0/0
+ip access-group 1 out
+##############OR############
+ip access-group NOLAN3 in
+exit
+########adding control list to vty interface#############
+line vty 0 4
+login local
+transport input ssh
+access-class 1 in
+exit
+##########editing existing control list##############
+show access-lists 1 
+config t
+ip access-list 1 standard
+no 10
+10 deny 192.168.2.0 0.0.0.255
+exit
