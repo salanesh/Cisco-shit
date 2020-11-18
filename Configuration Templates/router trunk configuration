@@ -2,9 +2,11 @@ en
 config t
 int g0/0.10
 encapsulation dot1q 10
+ip add 192.168.224.1 255.255.255.0
 exit
 int g0/0.99
 encapsulation dot1q 99 native
+ip add 192.168.225.1 255.255.255.0
 exit
 int g0/0
 no shutdown
