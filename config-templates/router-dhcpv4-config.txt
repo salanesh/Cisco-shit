@@ -1,0 +1,20 @@
+###########Basic Configuration###########
+en
+config t
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.10.254
+ip dhcp pool LAN-Pool-1
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+dns-server 192.168.11.5
+domain-name hentai.com
+end
+###########Verifying Configuration#########
+en
+show running-config | section dhcp
+show ip dhcp binding
+###########DHCP Relay#############
+###configure the router that borders the place that wants dhcp###
+int g0/0 ##exit interface of the router that recieves dhcp##
+ip helper-address 192.168.11.6 ##ip address of dhcp server##
+end
