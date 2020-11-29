@@ -18,3 +18,8 @@ show ip dhcp binding
 int g0/0 ##exit interface of the router that recieves dhcp##
 ip helper-address 192.168.11.6 ##ip address of dhcp server##
 end
+###########DHCP Address for Router Interface###########
+int g0/1
+ip address dhcp
+no shut
+
