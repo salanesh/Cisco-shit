@@ -7,8 +7,11 @@ no auto-summary
 network 10.0.0.0
 network 192.168.1.0
 end
-##############REDISTRIBUTING EIGRP ROUTES#########
+##############EIGRP TO RIP REDISTRIBUTION#########
 router rip
 redistribute eigrp metric 3
 exit
-##############
+##############OSPF TO RIP REDISTRIBUTION##########
+router rip
+redistribute ospf 1 metric 3
+exit

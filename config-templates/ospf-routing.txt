@@ -1,0 +1,21 @@
+#########OSPF ROUTING#########
+en
+config t
+router ospf 1
+router-id 1.1.1.1
+network 198.200.100.0 0.0.0.3
+network 156.187.200.0 0.0.0.31
+exit
+########RIP TO OSPF REDISTRIBUTION#######
+en
+config t
+router ospf 1
+redistribute rip metric 50000 subnets
+exit
+########EIGRP TO OSPF REDISTRIBUTION#####
+en
+config t
+router ospf 1
+redistribute eigrp 10 metric 50000 subnets
+exit
+

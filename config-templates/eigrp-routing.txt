@@ -6,7 +6,11 @@ no auto-summary
 network 192.168.10.0 0.0.0.3
 network 172.156.200.0 0.0.0.127
 end
-########EIGRP RIP REDISTRIBUTION###########
+########RIP TO EIGRP REDISTRIBUTION###########
 router eigrp 10
 redistribute rip metric 1544 100 255 1 1500
+end
+########OPSF TO EIGRP REDISTRIBUTION#########
+router eigrp 10
+redistribute ospf 1 metric 1544 100 255 1 1500
 end
