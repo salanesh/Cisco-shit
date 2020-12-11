@@ -14,3 +14,15 @@ end
 router eigrp 10
 redistribute ospf 1 metric 1544 100 255 1 1500
 end
+########IPV6 EIGRP CONFIG###########
+en
+config t
+ipv6 unicast-routing
+ipv6 router eigrp 10
+eigrp router-id 1.1.1.1
+no shut
+exit
+int g0/0
+ipv6 eigrp 10
+int s0/0/0
+ipv6 eigrp 10
