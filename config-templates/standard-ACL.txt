@@ -28,7 +28,7 @@ exit
 ##########editing existing control list##############
 show access-lists 1 
 config t
-ip access-list 1 standard
+ip access-list standard 1
 no 10
 10 deny 192.168.2.0 0.0.0.255
 exit
