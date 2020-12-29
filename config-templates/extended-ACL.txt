@@ -1,0 +1,29 @@
+#########Extended Access List Example########
+###extended access-list numbers are 100-199 or 2000-2699###
+
+access-list <access list number> <permit/deny> <protocol> <source> <source wildcard> <source operator port number or keyword> <destination> <destination wildcard> <eq> <destination operator port number or keyword>
+
+###no need for operator port number for access lists that use ip protocol###
+access-list 101 deny tcp 172.16.15.0 0.0.0.127 host 10.10.10.6 eq 21
+access-list 101 permit tcp 172.16.1.0 0.0.0.255 172.16.3.0 0.0.0.255 eq ftp 
+access-list 101 permit ip any any
+
+########Extended Access List Ports and Keywords###########
+PORT NUMBER-----PROTOCOL-------APPLICATION------KEYWORD
+20		TCP		FTP DATA	ftp-data
+21		TCP		FTP CONTROL	ftp
+22		TCP		SSH		
+23		TCP		TELNET		telnet
+25		TCP		SMTP		smtp
+53		TCP,UDP		DNS		domain
+67,68		UDP		DHCP		nameserver
+69		UDP		TFTP		tftp
+80		TCP		HTTP(WWW)	www
+110		TCP		POP3		pop3
+161		UDP		SNMP		snmp
+443		TCP		SSL		
+16,384-32,767	UDP		RTP,VOIP	
+
+
+
+		
