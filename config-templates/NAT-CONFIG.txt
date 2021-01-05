@@ -1,0 +1,13 @@
+##########Static NAT CONFIGURATION#########
+en
+config t
+ip nat inside source static <local-ip> <global-ip>
+interface <inside interface>
+ip nat inside
+exit
+interface <outside interface>
+ip nat outside
+exit
+#########Verify Nat Configuration#######
+en
+show ip nat translations
