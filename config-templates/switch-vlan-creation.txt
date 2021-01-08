@@ -17,5 +17,5 @@ int f0/18
 switchport mode access
 switchport access vlan 10
 mls qos trust cos
-switchport access vlan 150
+switchport voice vlan 150
 end
