@@ -13,3 +13,9 @@ login local
 exit
 ip ssh version 2
 exit
+######note use only vlan 1 for ip address if no router for intervlan routing######
+int vlan 1 
+ip add 192.168.10.2
+no shut
+exit
+ip default-gateway 192.168.10.1
