@@ -5,3 +5,4 @@ ip add 172.17.99.50 255.255.255.0
 ip default-gateway 172.17.99.1
 no shut
 end
+########note: the vlan must have at least 1 port and device on the same subnet as it#######

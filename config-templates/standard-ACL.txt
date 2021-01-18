@@ -16,7 +16,7 @@ exit
 ##########adding control list to interface###############
 int g0/0
 ip access-group 1 out
-##############OR############
+###########OR############
 ip access-group NOLAN3 in
 exit
 ########adding control list to vty interface#############

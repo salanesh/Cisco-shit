@@ -4,7 +4,8 @@
 ####access-list <access list number> <permit/deny> <protocol> <source> <source wildcard> <source operator port number or keyword> <destination> <destination wildcard> <eq> <destination operator port number or keyword>####
 
 ###no need for operator port number for access lists that use ip protocol###
-access-list 101 deny tcp 172.16.15.0 0.0.0.127 host 10.10.10.6 eq 21
+
+access-list 101 deny tcp 172.16.15.0 0.0.0.127 host 10.10.10.6 21
 access-list 101 permit tcp 172.16.1.0 0.0.0.255 172.16.3.0 0.0.0.255 eq ftp 
 access-list 101 permit ip any any
 
